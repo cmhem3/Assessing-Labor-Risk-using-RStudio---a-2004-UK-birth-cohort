@@ -4,6 +4,9 @@ Word count: 350
 
 HOW TO https://www.youtube.com/watch?v=0N9xekdKCwk
 
+##TABLE OF CONTENTS (video minute 25)
+
+
 ##Data Sources
 The data set you will be using is a 2004 UK Birth cohort. This was a prospective observational study on 8,915 women who intended to deliver their babies while labouring in water (a waterbirth). The women were cared for by midwives employed by the National Health Service (NHS) in three different delivery settings. The women either attended a hospital, small midwifery-led unit, or stayed at home to deliver their baby. The original study examined the characteristics of the women and any subsequent interventions they had during labour.  In this assessment we want you to explore what the predictors are of two outcomes. 
 
@@ -68,8 +71,6 @@ In your write-up of the survival analysis, we would like you to report on how ag
 
 #EDIT WORDS BELOW SO IT MAKES SENSE
 -Data Cleaning/Preparation
-
-##TABLE OF CONTENTS
 
 BACKGROUND:
 Multiple factors can contribute to mortality during pregnancy. EmergencyCS is a 
