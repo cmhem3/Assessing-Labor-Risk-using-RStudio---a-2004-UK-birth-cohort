@@ -1,20 +1,14 @@
 # Investigating Potential Risks of Long Labor and Associations of Emergency Cesarean Sections
-A grad project identifying C-section risk pregnancies using R
-Word count: 350
-
-HOW TO https://www.youtube.com/watch?v=0N9xekdKCwk
-
-##TABLE OF CONTENTS (video minute 25)
+A grad project identifying c-section risk pregnancies using RStudio
 
 
-##Data Sources
-The data set you will be using is a 2004 UK Birth cohort. This was a prospective observational study on 8,915 women who intended to deliver their babies while labouring in water (a waterbirth). The women were cared for by midwives employed by the National Health Service (NHS) in three different delivery settings. The women either attended a hospital, small midwifery-led unit, or stayed at home to deliver their baby. The original study examined the characteristics of the women and any subsequent interventions they had during labour.  In this assessment we want you to explore what the predictors are of two outcomes. 
+##DATA SOURCE:
+The data set for this analysis is the 2004 UK Birth cohort. This was a prospective observational study on 8,915 women who intended to deliver their babies while labouring in water (a waterbirth). The women were cared for by midwives employed by the National Health Service (NHS) in three different delivery settings. The women either attended a hospital, small midwifery-led unit, or stayed at home to deliver their baby. The original study examined the characteristics of the women and any subsequent interventions they had during labour.  In this assessment we want you to explore what the predictors are of two outcomes. 
 
-We want you to:
+GRADUATE SCHOOL CRITERIA FOR DATA ANALYSIS
+    -undertake a re-analysis of this birth cohort dataset
 
-undertake a re-analysis of this birth cohort dataset
-
-submit a 350 word abstract summarising the study and what you found
+    -submit a 550 word abstract summarising the study and what you found
 
 In addition to the abstract, submit two data flow diagrams*, one for each of the two final models you fit
 
