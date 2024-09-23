@@ -2,10 +2,10 @@
 A grad project identifying c-section risk pregnancies using RStudio
 
 
-##DATA SOURCE:
+### DATA SOURCE:
 The data set for this analysis is the 2004 UK Birth cohort. This was a prospective observational study on 8,915 women who intended to deliver their babies while labouring in water (a waterbirth). The women were cared for by midwives employed by the National Health Service (NHS) in three different delivery settings. The women either attended a hospital, small midwifery-led unit, or stayed at home to deliver their baby. The original study examined the characteristics of the women and any subsequent interventions they had during labour.  In this assessment we want you to explore what the predictors are of two outcomes. 
 
-GRADUATE SCHOOL CRITERIA FOR DATA ANALYSIS
+#### GRADUATE SCHOOL CRITERIA FOR DATA ANALYSIS
     -undertake a re-analysis of this birth cohort dataset
 
     -submit a 550 word abstract summarising the study and what you found
@@ -62,34 +62,39 @@ In your write-up of emergency CS model, we would like you to report on the relat
 
 In your write-up of the survival analysis, we would like you to report on how age (>30) and centre are associate with time to birth.  In this model you may detect evidence for non-proportional hazards between groups, but as the hazards do not swap and the model will provide an average over the whole time period, we are satisfied these model estimates provide a useful summary.  
 
-#EDIT WORDS BELOW SO IT MAKES SENSE
--Data Cleaning/Preparation
+**ANALYSIS USING RSTUDIO**
 
-BACKGROUND:
-Multiple factors can contribute to mortality during pregnancy. EmergencyCS is a 
-technique to preserve the life of both mom and baby. Educating women on risk-factors may 
-help prevent unnecessary EmergencyCS. Additionally, labor time (LT) is affected by 
-numerous causes and if unnecessarily long, can jeopardize outcomes. This study aims to 
-analyze possible risks/associations of EmergencyCS and LT.
-METHODS:
-A relatively low-risk birth cohort study was performed to analyze risk of Emergency
-using Logistic Regression (Log-Reg). Moreover, survival analysis, using Cox Regression 
-(Cox-Reg), was done to analyze factors that affect (LT) to birth of baby; long LT may 
-compromise pregnancy. 
+**BACKGROUND**:
 
-RESULTS:
-Log-Reg analyzed odds ratios (OR) of EmergencyCS using variables center_attended
-(mid-wife-clinic vs hospital), Gestation_cat (<38 weeks, 38-42 weeks, or >42 weeks), and 
-women who had PreviousCS. Gestation_cat >42weeks was found significant (p=0.0003, 
-95% CI 1.90 - 6.84, OR 76.42) compared to Gestation_cat 38-42 weeks (p >0.05, OR = 
-3.20). Unsurprisingly, PreviousCS, while significant (p<0.05, OR = 30.40), was small (n=18)
-so future studies may benefit. Midwife-clinic was found significant (p< 0.05), but OR was low 
-(0.074). Code for model1 included:
- cslogFULL_MODEL <- glm(EmergencyCS ~ Gestation_cat + center_attended + 
-PreviousCS, family = binomial(link = logit))
+Multiple factors may contribute to mortality during pregnancy.  Emergency Cesarean Section (ECS) is a technique done to preserve the life of both mom and baby.  Educating women on risk factors may help prevent unnecessary ECS.  Additionally, long labor time (LLT) is affected by numerous causes and that can jeopardize health outcomes of mom and baby.  This paper will analyze possible risks and associations of ECS and LLT.
 
-REFERENCES??
-1. Imperial College Coursera link
-2. Stack overflow?
+**METHODS**:
+
+An analysis using RStudio was performed on a relatively low-risk birth cohort to assess odds of ECS using Logistic Regression (Log-Reg).  Moreover, survival analysis via Cox Regression (Cox-Reg), was performed to analyze factors that affect LLT.  The analysis was done using two datasets, var_labels, which is a table listing the categorical status of all 8915 patients in the study.  The other is var_numbers, is a numeric table listing clinical status and outcomes of labor.  Both tables were free of major data errors, but flow-charts are included below to showcase where data may have been altered/removed to accurately run the regression models.  
+
+**RESULTS**:
+
+Log-Reg analyzed odds ratios (OR) of ECS using variables such as healthcare facility (i.e. “center_attended”, mid-wife-clinic vs hospital), gestational category (i.e. “Gestation_cat”, <38 weeks, 38-42 weeks, or >42 weeks).  Women with a previous c-section (i.e. “PreviousCS” with Gestation_cat, >42weeks) was found significant for an ECS (p=0.0003, 95% CI 1.90 - 6.84, OR 76.42) compared to Gestation_cat 38-42 weeks (p >0.05, OR = 3.20).  Unsurprisingly, PreviousCS, while significant (p<0.05, OR = 30.40), had a very small number of patients (n=18) so further research with larger sample size is warranted.  Midwife-clinic was found significant for ECS (p< 0.05), but the OR was low (0.074).  
+Code for the Log-Reg model here: 
+
+    -Log-RegModel <- glm(EmergencyCS ~ Gestation_cat + center_attended + PreviousCS, family = binomial(link = logit))
+ 
+![image](https://github.com/user-attachments/assets/7ae092c3-418b-4e32-bf80-a54f2ce062ef)
+
+Cox-Reg performed survival analysis to assess hazard ratios (HR) of LLT using the variables Gestation (defined above), Maternal Age (i.e. Mage, age under or over 30 years), Parity (number of previous pregnancies), Twins, Cephalic_Breech (position of baby), Membranes_ruptured, and Center_attended.  Essentially, HR’s <1 means less risk of LLT, and likely reduced risk of complications.  Variables associated with increasing LLT was Mage (HR 1.36, p<0.05), having Twins (HR 2.29, p<0.05), Membrane_not_ruptured (HR 1.73, p<0.05).  Other variables, like gestation, parity, and center (hospital) had p-values <0.05, but low HR’s.  As well, higher HR’s may contribute to longer LT and possible complications, like ECS.  
+Code for Cox-Reg model:
+
+    -Cox-RegModel <- coxph(Surv(labor, birth) ~ LL1$Gestation + LL1$Mage_cat2 + LL1$Parity + LL1$Twins + LL1$Cephalic_Breech + LL1$Membranes_rupture + LL1$center_attended) 
+
+![image](https://github.com/user-attachments/assets/42dcd0e8-c68f-4a4c-be13-88244f171484)
+
+**CONCLUSION**:
+
+In summary, educating women on their risks for both ECS and LLT are essential to maternal-baby health.  Future studies may benefit investigating how previous c-sections may influence future ECS.  As well, literature reviews on maternal age, twins, parity, and center of delivery may provide additional context. Finally, there is a need to educate women on risk-factors to prevent harm to mom and baby.
+
+
+
+**REFERENCES**:
+1. Coursera. (n.d.). Statistical Analysis with R for Public Health. Retrieved February 2nd, 2020, from https://www.coursera.org/specializations/statistical-analysis-r-public-health?msockid=0a8de113eef36e56141cf5d6ef7f6f10
 
 
