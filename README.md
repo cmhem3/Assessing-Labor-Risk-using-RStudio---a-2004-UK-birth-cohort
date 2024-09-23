@@ -16,12 +16,11 @@ Finally, submit the single line of R code for each model
 
 * The data flow diagram should depict how many women were in the dataset at the start, how many you then removed prior to analysis with the reason why you removed them, and how many women were included in your final analysis model. 
 
-How you should re-analyse the birth cohort dataset
+INSTRUCTIONS TO ANALYZE THE BIRTH COHORT DATASET: 
 We would like you to undertake regression analysis to find out predictors of the outcomes:
 
-Having an emergency Caesarean section - including any of the variables in the dataset of  your choosing
-
-The time to birth of the baby (time taken from start of contractions to giving birth) - using the variables: gestational age (categorised), maternal age <30 (Y/N), parity (primip/multip), twins (Y/N), Breech (Y/N), membranes ruptured (Y/N), centre attended. 
+    -Having an emergency Caesarean section - including any of the variables in the dataset of  your choosing
+    -The time to birth of the baby (time taken from start of contractions to giving birth) - using the variables: gestational age (categorised), maternal age <30 (Y/N), parity (primip/multip), twins (Y/N), Breech (Y/N), membranes ruptured (Y/N), centre attended. 
 
 Parity indicates the number of pregnancies reaching viable gestational age (including live births and stillbirths). The number of foetuses does not determine the parity, which means that a twin pregnancy carried to viable gestational age is counted as 1. If this is the woman’s first pregnancy, she will be what’s called a “primip”, short for “primiparous”; if not, she will be a “multip”, short for “multiparous”.
 
@@ -33,7 +32,7 @@ Note that this sample of women is a self-selecting group who had chosen to use a
 
 In the dataset you will see there are maternal characteristics, interventions and birth and baby outcomes. Explore these variables to get familiar with the dataset. All missing data has been coded with the value ‘-9’. All impossible values in the dataset you should recode to missing.
 
-You will see the outcome variable:
+#You will see the outcome variable:
 
 ·       EmergencyCS
 
