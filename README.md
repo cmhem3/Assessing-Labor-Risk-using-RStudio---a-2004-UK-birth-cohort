@@ -1,5 +1,6 @@
 # Investigating Potential Risks of Long Labor and Associations of Emergency Cesarean Sections
-A masters of public health project identifying c-section risk using RStudio
+A masters of public health project identifying c-section risk using RStudio (2020-02-02)
+
 
 
 ### DATA SOURCE:
